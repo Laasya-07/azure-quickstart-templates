@@ -116,7 +116,7 @@
     },
     "resources": [
         {
-            "apiVersion": "2019-04-01",
+            "apiVersion": "2019-08-01",
             "name": "[variables('hostingPlanName')]",
             "type": "Microsoft.Web/serverfarms",
             "location": "[parameters('location')]",
@@ -131,7 +131,7 @@
             }
         },
         {
-            "apiVersion": "2019-04-01",
+            "apiVersion": "2019-08-01",
             "name": "[parameters('siteName')]",
             "type": "Microsoft.Web/sites",
             "location": "[parameters('location')]",
@@ -144,7 +144,7 @@
                 },
             "resources": [
                 {
-                    "apiVersion": "2019-04-01",
+                    "apiVersion": "2019-08-01",
                     "name": "connectionstrings",
                     "type": "config",
                     "dependsOn": [
@@ -160,7 +160,7 @@
             ]
         },
         {
-            "apiVersion": "2019-04-01",
+            "apiVersion": "2019-08-01",
             "type": "Microsoft.DBforPostgreSQL/servers",
             "location": "[parameters('location')]",
             "name": "[variables('serverName')]",
@@ -180,7 +180,7 @@
             "resources": [
                 {
                     "type": "firewallrules",
-                    "apiVersion": "2019-04-01",
+                    "apiVersion": "2019-08-01",
                     "dependsOn": [
                         "[resourceId('Microsoft.DBforPostgreSQL/servers', variables('serverName'))]"
                     ],
@@ -194,7 +194,7 @@
                 {
                     "name": "[variables('databaseName')]",
                     "type": "databases",
-                    "apiVersion": "2019-04-01",
+                    "apiVersion": "2019-08-01",
                     "properties": {
                         "charset": "utf8",
                         "collation": "English_United States.1252"
